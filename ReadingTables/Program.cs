@@ -14,7 +14,7 @@ namespace ReadingTables
         {
             Driver = new ChromeDriver();
 
-            Driver.Navigate().GoToUrl("file:///C:/SimpleTable.html");
+            Driver.Navigate().GoToUrl("file:///C:/ComplexTable.html");
 
             TablePage page = new TablePage();
 
@@ -26,6 +26,13 @@ namespace ReadingTables
 
             Console.WriteLine("The name {0} with Email {1} and Phone {2}",
                 Utilities.ReadCell("Name", 1), Utilities.ReadCell("Email", 1), Utilities.ReadCell("Phone", 1));
+
+
+            // Delete Cliff
+            Utilities.PerformActionOnCell("5", "Name", "Cliff", "Delete");
+            Utilities.PerformActionOnCell("Option", "Name", "Cliff");
+
+
 
             Console.Read();
 
